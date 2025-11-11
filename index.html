@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Psicóloga Mayne Arquilino</title>
+  <!-- Fonte Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600|Lato:400,700|Open+Sans:400,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #e8f4f2;
+      --accent: #a0d6c6;
+      --detail: #9ad6ab;
+      --text-dark: #214039;
+      --white: #fff;
+      --beige: #faf7f5;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Poppins', 'Lato', 'Open Sans', sans-serif;
+      background: var(--beige);
+      color: var(--text-dark);
+      line-height: 1.7;
+    }
+    header {
+      background: var(--primary);
+      padding: 1.2rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      border-bottom: 2px solid var(--accent);
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .logo img {
+      height: 50px;
+      width: 50px;
+    }
+    .header-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: bold;
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: var(--detail);
+    }
+    .crp {
+      font-size: 1rem;
+      margin-left: 2rem;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    /* Banner/Início */
+    .banner {
+      background: linear-gradient(120deg, var(--primary) 60%, var(--white) 100%);
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      min-height: 320px;
+    }
+    .banner-img {
+      flex: 1;
+      min-width: 220px;
+      text-align: center;
+    }
+    .banner-img img {
+      max-width: 360px;
+      border-radius: 15px;
+      box-shadow: 0 0 22px #a0d6c652;
+    }
+    .banner-text {
+      flex: 2;
+      min-width: 250px;
+      text-align: left;
+      padding: 0 2rem;
+    }
+    .banner-text h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+    .banner-text p {
+      font-size: 1.23rem;
+      color: var(--text-dark);
+      max-width: 450px;
+    }
+
+    /* Sobre mim */
+    .about {
+      background: var(--white);
+      padding: 3rem 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2.5rem;
+      border-bottom: 2px solid var(--accent);
+    }
+    .about-img {
+      flex: 1;
+      text-align: center;
+    }
+    .about-img img {
+      width: 170px;
+      height: 170px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid var(--detail);
+      box-shadow: 0 0 15px #a0d6c656;
+    }
+    .about-content {
+      flex: 2;
+      min-width: 200px;
+    }
+    .about-content h2 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+      letter-spacing: 1px;
+    }
+    .about-content p {
+      margin-bottom: 0.9rem;
+      color: var(--text-dark);
+      font-size: 1.06rem;
+    }
+
+    /* Especialidades */
+    .specialties {
+      background: var(--primary);
+      padding: 2.7rem 2rem;
+      text-align: center;
+    }
+    .specialties h2 {
+      font-size: 1.3rem;
+      color: var(--accent);
+      margin-bottom: 1.7rem;
+    }
+    .specialties-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+    .specialty-card {
+      background: var(--white);
+      border: 2px solid var(--accent);
+      border-radius: 16px;
+      padding: 1.1rem 1.5rem;
+      min-width: 180px;
+      box-shadow: 0 0 8px #a0d6c655;
+      font-weight: 600;
+      color: var(--text-dark);
+      transition: box-shadow 0.2s;
+    }
+    .specialty-card:hover {
+      box-shadow: 0 0 15px #a0d6c655;
+    }
+
+    /* Contato */
+    .contact {
+      background: var(--white);
+      padding: 2.7rem 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      border-bottom: 2px solid var(--accent);
+    }
+    .contact-form, .contact-info {
+      flex: 1;
+      min-width: 220px;
+    }
+    .contact-form h2 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.65rem;
+      margin: 0.5rem 0 1rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1.5px solid var(--detail);
+      background: var(--primary);
+      color: var(--text-dark);
+      resize: vertical;
+      font-family: inherit;
+    }
+    .contact-form textarea {
+      height: 80px;
+    }
+    .contact-form button {
+      background: var(--accent);
+      color: var(--text-dark);
+      font-weight: 700;
+      border-radius: 8px;
+      border: none;
+      padding: 0.7rem 1.6rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .contact-form button:hover {
+      background: var(--detail);
+    }
+    .contact-info h3 {
+      margin-bottom: 1rem;
+      color: var(--accent);
+      font-size: 1rem;
+    }
+    .contact-info p {
+      margin-bottom: 0.6rem;
+      font-size: 1.06rem;
+    }
+    .contact-info .social {
+      margin-top: 1rem;
+    }
+    .contact-info a {
+      margin-right: 0.8rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 1.7rem;
+      vertical-align: middle;
+      transition: color 0.2s;
+    }
+    .contact-info a:hover {
+      color: var(--detail);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--primary);
+      color: var(--text-dark);
+      text-align: center;
+      padding: 1.5rem .6rem;
+      font-size: 0.96rem;
+      margin-top: 0.5rem;
+      border-top: 2px solid var(--accent);
+    }
+    footer p {
+      margin: 0.5rem 0;
+    }
+
+    /* Responsivo */
+    @media (max-width: 900px) {
+      .banner, .about, .contact { flex-direction: column; }
+      .banner-img, .banner-text, .about-img, .about-content, .contact-form, .contact-info {
+        min-width: unset; width: 100%; text-align: center;
+      }
+      .banner-text { padding: 1rem 0; }
+      nav ul { gap: 1.2rem; }
+    }
+    @media (max-width: 600px) {
+      header { flex-direction: column; gap: 1rem; }
+      .logo img { height: 40px; width: 40px; }
+      .banner-text h1, .specialties h2, .about-content h2 {
+        font-size: 1.09rem;
+      }
+      .specialty-card { min-width: 120px; padding: 0.9rem 1rem; font-size: .99rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header>
+    <div class="logo">
+      <img src="https://img.icons8.com/fluency/48/mental-health.png" alt="Logo Mandala Mente">
+      <div class="header-info">
+        <span style="font-size:1.17rem;font-weight:600;">Psicóloga Mayne Arquilino</span>
+        <span class="crp">CRP 00/00000</span>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#sobre">Sobre mim</a></li>
+        <li><a href="#especialidades">Especialidades</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Início Apresentação -->
+  <section id="inicio" class="banner">
+    <div class="banner-img">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80"
+        alt="Banner de acolhimento / natureza">
+    </div>
+    <div class="banner-text">
+      <h1>Bem-vindo(a)!</h1>
+      <p>
+        Cuidar da mente é um ato de coragem. Meu compromisso é oferecer um espaço de escuta e acolhimento para o seu autoconhecimento.
+      </p>
+    </div>
+  </section>
+
+  <!-- Sobre mim -->
+  <section id="sobre" class="about">
+    <div class="about-img">
+      <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Psicóloga Mayne Arquilino Foto Profissional">
+    </div>
+    <div class="about-content">
+      <h2>Sobre mim</h2>
+      <p>Graduada em Psicologia pela Universidade Federal de Pernambuco.</p>
+      <p>Atendo individualmente, utilizando abordagem cognitivo-comportamental, com foco em ansiedade, autoconhecimento e saúde emocional.</p>
+      <p>Meu trabalho é guiado pela empatia, ética e respeito à singularidade de cada pessoa.</p>
+    </div>
+  </section>
+
+  <!-- Especialidades -->
+  <section id="especialidades" class="specialties">
+    <h2>Especialidades</h2>
+    <div class="specialties-list">
+      <div class="specialty-card">Ansiedade e depressão</div>
+      <div class="specialty-card">Relacionamentos</div>
+      <div class="specialty-card">Autoconhecimento</div>
+      <div class="specialty-card">Inteligência emocional</div>
+      <div class="specialty-card">Terapia online e presencial</div>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contato" class="contact">
+    <form class="contact-form" autocomplete="off">
+      <h2>Contato</h2>
+      <input type="text" placeholder="Nome completo" required>
+      <input type="email" placeholder="E-mail" required>
+      <input type="tel" placeholder="Telefone (opcional)">
+      <textarea placeholder="Mensagem" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+    <div class="contact-info">
+      <h3>Contato direto</h3>
+      <p><strong>E-mail:</strong> contato@maynearquilino.com</p>
+      <p><strong>Telefone:</strong> (81) 99999-9999</p>
+      <p><strong>Endereço:</strong> Av. Boa Viagem, 1000 – Recife/PE</p>
+      <div class="social">
+        <a href="#" title="Instagram" target="_blank">
+          <img src="https://img.icons8.com/color/36/instagram-new.png" alt="Instagram" style="vertical-align:middle;">
+        </a>
+        <a href="#" title="Facebook" target="_blank">
+          <img src="https://img.icons8.com/color/36/facebook-new.png" alt="Facebook" style="vertical-align:middle;">
+        </a>
+        <!-- Adicione outros ícones/redes se quiser -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>Psicóloga Mayne Arquilino – CRP 00/00000</p>
+    <p>O atendimento psicológico é uma prática regulamentada pelo Conselho Federal de Psicologia (CFP).</p>
+    <p>© 2025 Psicóloga Mayne Arquilino – Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Opcional: script para rolar suavemente no menu em mobile -->
+  <script>
+    document.querySelectorAll('nav a').forEach(function(link){
+      link.addEventListener('click', function(e){
+        var href = link.getAttribute('href');
+        var target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({behavior:'smooth'});
+        }
+      });
+    });
+  </script>
+</body>
+</html>
